@@ -56,7 +56,7 @@ namespace LiveKit
                 textureChanged = true;
             }
 
-            Graphics.Blit(Texture, _previewTexture, new Vector2(1f, -1f), new Vector2(0f, 1f));
+            Graphics.Blit(Texture, _previewTexture);
             AsyncGPUReadback.RequestIntoNativeArray(ref _captureBuffer, _previewTexture, 0, _textureFormat, OnReadback);
             return textureChanged;
         }
